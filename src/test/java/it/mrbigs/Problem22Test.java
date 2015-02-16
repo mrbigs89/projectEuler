@@ -11,9 +11,7 @@ public class Problem22Test {
     @Test
     public void testReadNamesFromFile() throws Exception {
         String filename = "Project Euler/p022_names.txt";
-        for (String name : readNamesFromFile(filename)) {
-            System.out.println(name);
-        }
+        readNamesFromFile(filename).forEach(System.out::println);
     }
 
     @Test
