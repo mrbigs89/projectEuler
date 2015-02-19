@@ -71,4 +71,11 @@ public class CommonTest {
             assertEquals(arrayCopy[i], array[i]);
         }
     }
+
+    @Test
+    public void testTotient() throws Exception {
+        for (int i = 0; i < 1000; i++) {
+            System.out.println(totient(i));
+        }
+    }
 }

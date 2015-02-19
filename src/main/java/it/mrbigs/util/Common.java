@@ -28,14 +28,19 @@ public class Common {
 
     public static Set<Long> getPrimeDivisors(long number) {
         Set<Long> divisors = new HashSet<>();
+        if (number == 0) {
+            return divisors;
+        }
         divisors.add(1L);
-        divisors.add(number);
         while (number > 1) {
             long divisor;
             for (divisor = 2; number % divisor != 0; divisor++) {
             }
             number = number / divisor;
             divisors.add(divisor);
+        }
+        if (divisors.size() == 1) {
+            divisors.add(number);
         }
         return divisors;
     }
@@ -127,5 +132,16 @@ public class Common {
                 permutation(prefix + s.charAt(i), s.substring(0, i) + s.substring(i + 1, n), list);
             }
         }
+    }
+
+    public static long totient(long n) {
+        Set<Long> primeDivisors = getPrimeDivisors(n);
+        double result = n;
+        for (double primeDivisor : primeDivisors) {
+            if (primeDivisor > 1) {
+                result = (result * (1 - 1 / primeDivisor));
+            }
+        }
+        return (long) result;
     }
 }
