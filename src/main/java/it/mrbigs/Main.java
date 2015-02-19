@@ -10,10 +10,11 @@ public class Main {
             System.out.println("--- problem " + numberOfProblem + " ---" + System.lineSeparator());
             long startTime = System.currentTimeMillis();
             try {
-                Problem problem = Problem.class.newInstance();
+                Class<Problem> problemClass = (Class<Problem>) Class.forName("it.mrbigs.Problem" + numberOfProblem);
+                Problem problem = problemClass.newInstance();
                 System.out.println(problem.solve());
                 System.out.println("--- problem " + numberOfProblem + " solved in " + (System.currentTimeMillis() - startTime) / 1000.0 + " seconds ---" + System.lineSeparator());
-            } catch (InstantiationException | IllegalAccessException e) {
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
                 e.printStackTrace();
             }
         }
