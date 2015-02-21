@@ -78,4 +78,12 @@ public class CommonTest {
             System.out.println(totient(i));
         }
     }
+
+    @Test
+    public void testGetDigits() throws Exception {
+        List<Integer> list = new LinkedList<>();
+        list.add(0);
+        list.add(1);
+        assertEquals(list, getDigits(10));
+    }
 }

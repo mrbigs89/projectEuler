@@ -160,4 +160,13 @@ public class Common {
             return true;
         }
     }
+
+    public static List<Integer> getDigits(long number) {
+        List<Integer> digits = new LinkedList<>();
+        while (number > 0) {
+            digits.add((int) (number % 10));
+            number = number / 10;
+        }
+        return digits;
+    }
 }
