@@ -1,5 +1,7 @@
 package it.mrbigs;
 
+import java.math.BigInteger;
+
 /**
  * Created by Simone on 30/01/2015.
  */
@@ -9,7 +11,7 @@ public class Problem8 implements Problem {
     private final static int CONSECUTIVE_NUMBERS = 13;
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         int digits[] = new int[BIGNUMBER.length()];
         for (int i = 0; i < BIGNUMBER.length(); i++) {
             digits[i] = Character.getNumericValue(BIGNUMBER.charAt(i));
@@ -31,6 +33,6 @@ public class Problem8 implements Problem {
             }
             System.out.println(i + ":  " + maxProduct + " -->  " + maxDigits.toString() + " = " + checkProduct);
         }
-        return maxProduct;
+        return BigInteger.valueOf(maxProduct);
     }
 }

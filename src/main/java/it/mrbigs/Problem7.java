@@ -2,6 +2,8 @@ package it.mrbigs;
 
 import it.mrbigs.util.PrimeChecker;
 
+import java.math.BigInteger;
+
 /**
  * Created by Simone on 30/01/2015.
  */
@@ -10,7 +12,7 @@ public class Problem7 implements Problem {
     private static final int LIMIT = 10001;
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         int primeCounter = 0;
         int lastPrime = 0;
         for (int number = 2; primeCounter < LIMIT; number++) {
@@ -22,9 +24,9 @@ public class Problem7 implements Problem {
                 }
             } catch (Exception e) {
                 System.out.println("Problem7::solve() --> PrimeChecker::call() " + e.getMessage());
-                return -1;
+                return BigInteger.valueOf(-1);
             }
         }
-        return lastPrime;
+        return BigInteger.valueOf(lastPrime);
     }
 }

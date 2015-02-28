@@ -1,5 +1,6 @@
 package it.mrbigs;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import static it.mrbigs.util.Common.generatePermutations;
@@ -12,8 +13,8 @@ public class Problem24 implements Problem {
     private static final String STRING = "0123456789";
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         List<String> permutations = generatePermutations(STRING);
-        return Long.parseLong(permutations.get(999999));
+        return new BigInteger(permutations.get(999999));
     }
 }

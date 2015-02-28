@@ -11,7 +11,7 @@ public class Problem16 implements Problem {
     private static final int EXPONENT = 1000;
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         BigInteger number = BigInteger.valueOf(2).pow(EXPONENT);
         String stringNumber = number.toString();
         System.out.println(stringNumber);
@@ -20,6 +20,6 @@ public class Problem16 implements Problem {
         for (char c : charArray) {
             sum += Long.parseLong(String.valueOf(c));
         }
-        return sum;
+        return BigInteger.valueOf(sum);
     }
 }

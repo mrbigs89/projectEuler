@@ -1,5 +1,6 @@
 package it.mrbigs;
 
+import java.math.BigInteger;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,7 +17,7 @@ public class Problem30 implements Problem {
 
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         Set<Long> set = new HashSet<>();
         for (long n = 2; n < LIMIT; n++) {
             long sum = 0;
@@ -31,6 +32,6 @@ public class Problem30 implements Problem {
         for (Long number : set) {
             finalSum += number;
         }
-        return finalSum;
+        return BigInteger.valueOf(finalSum);
     }
 }

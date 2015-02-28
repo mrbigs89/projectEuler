@@ -1,5 +1,6 @@
 package it.mrbigs;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,7 +102,7 @@ public class Problem11 implements Problem {
 
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         long max = 0;
         List<List<Integer>> rows = intRowsFromStringTable(STRING_TABLE);
         List<List<Integer>> columns = intColumnsFromIntRows(rows);
@@ -116,7 +117,7 @@ public class Problem11 implements Problem {
                 max = product;
             }
         }
-        return max;
+        return BigInteger.valueOf(max);
     }
 
 }

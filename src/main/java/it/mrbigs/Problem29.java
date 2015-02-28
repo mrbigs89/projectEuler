@@ -13,7 +13,7 @@ public class Problem29 implements Problem {
     private static final long LIMIT = 100;
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         Set<BigInteger> set = new HashSet<>();
         for (int a = 2; a <= LIMIT; a++) {
             BigInteger base = new BigInteger(String.valueOf(a));
@@ -21,6 +21,6 @@ public class Problem29 implements Problem {
                 set.add(base.pow(b));
             }
         }
-        return set.size();
+        return BigInteger.valueOf(set.size());
     }
 }

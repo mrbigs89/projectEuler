@@ -1,6 +1,7 @@
 package it.mrbigs;
 
 import java.io.IOException;
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -16,7 +17,7 @@ public class Problem22 implements Problem {
     private static final String FILENAME = "Project Euler/p022_names.txt";
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         List<String> sortedNames = readNamesFromFile(FILENAME);
         Collections.sort(sortedNames);
         long totScore = 0;
@@ -24,7 +25,7 @@ public class Problem22 implements Problem {
             String name = sortedNames.get(i);
             totScore += (i + 1) * nameScore(name);
         }
-        return totScore;
+        return BigInteger.valueOf(totScore);
     }
 
     public static int nameScore(String name) {

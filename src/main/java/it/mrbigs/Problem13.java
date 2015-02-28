@@ -2,6 +2,7 @@ package it.mrbigs;
 
 import it.mrbigs.util.Common;
 
+import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -112,13 +113,13 @@ public class Problem13 implements Problem {
             "53503534226472524250874054075591789781264330331690"};
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         List<Integer> columns = Common.computeSum(STRING_NUMBERS);
         StringBuilder resultString = new StringBuilder();
         for (int i = 0; i < 10; i++) {
             resultString.append(columns.remove(columns.size() - 1));
         }
-        return Long.parseLong(resultString.toString());
+        return new BigInteger(resultString.toString());
     }
 
 

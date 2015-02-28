@@ -1,5 +1,6 @@
 package it.mrbigs;
 
+import java.math.BigInteger;
 import java.util.*;
 
 /**
@@ -10,7 +11,7 @@ public class Problem2 implements Problem {
     private static final int LIMIT = 4000000;
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         int sum = 0;
         int current = 1;
         int previous = 0;
@@ -23,6 +24,6 @@ public class Problem2 implements Problem {
                 sum += current;
             }
         }
-        return sum;
+        return BigInteger.valueOf(sum);
     }
 }

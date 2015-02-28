@@ -2,6 +2,8 @@ package it.mrbigs;
 
 import it.mrbigs.util.Common;
 
+import java.math.BigInteger;
+
 /**
  * Created by Simone on 11/02/2015.
  */
@@ -10,7 +12,7 @@ public class Problem23 implements Problem {
     private static final long LIMIT = 28123;
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         long finalSum = 0;
         for (int number = 1; number < LIMIT; number++) {
             if (!writeableAsSumOfAbundant(number)) {
@@ -18,7 +20,7 @@ public class Problem23 implements Problem {
                 System.out.println(number);
             }
         }
-        return finalSum;
+        return BigInteger.valueOf(finalSum);
     }
 
     public static boolean writeableAsSumOfAbundant(long number) {

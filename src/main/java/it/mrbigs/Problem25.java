@@ -10,7 +10,7 @@ public class Problem25 implements Problem {
     private static final long NUMBER_OF_DIGITS = 1000;
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
 
         BigInteger currentNumber = new BigInteger(String.valueOf(1));
         BigInteger previousNumber = new BigInteger(String.valueOf(1));
@@ -24,6 +24,6 @@ public class Problem25 implements Problem {
             index++;
         }
         System.out.println(currentNumber.toString());
-        return index;
+        return BigInteger.valueOf(index);
     }
 }

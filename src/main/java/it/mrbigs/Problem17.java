@@ -7,6 +7,8 @@ import org.psjava.ds.graph.MutableDirectedWeightedGraph;
 import org.psjava.ds.numbersystrem.IntegerNumberSystem;
 import org.psjava.goods.GoodDijkstraAlgorithm;
 
+import java.math.BigInteger;
+
 /**
  * Created by Simone on 09/02/2015.
  */
@@ -37,7 +39,7 @@ public class Problem17 implements Problem {
 
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         IntegerNumberSystem NS = IntegerNumberSystem.getInstance();
 
         int nLevels = 0;
@@ -57,7 +59,7 @@ public class Problem17 implements Problem {
 
         DijkstraAlgorithm dijkstra = GoodDijkstraAlgorithm.getInstance();
         SingleSourceShortestPathResult<String, Integer, DirectedWeightedEdge<String, Integer>> result = dijkstra.calc(graph, SOURCE, NS);
-        return maxEdgeWeight * nLevels - result.getDistance(DEST);
+        return BigInteger.valueOf(maxEdgeWeight * nLevels - result.getDistance(DEST));
     }
 
     public static MutableDirectedWeightedGraph<String, Integer> readTreeFromString(String stringGraph, int maxWeight) {

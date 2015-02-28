@@ -1,5 +1,7 @@
 package it.mrbigs;
 
+import java.math.BigInteger;
+
 /**
  * Created by Simone on 21/02/2015.
  */
@@ -9,7 +11,7 @@ public class Problem28 implements Problem {
 //    private static final long LENGTH = 25;
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         long sum = 0;
         long interval = 2;
         int cornerCounter = -1;
@@ -21,6 +23,6 @@ public class Problem28 implements Problem {
                 interval +=2;
             }
         }
-        return sum;
+        return BigInteger.valueOf(sum);
     }
 }

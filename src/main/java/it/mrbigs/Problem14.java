@@ -1,5 +1,7 @@
 package it.mrbigs;
 
+import java.math.BigInteger;
+
 /**
  * Created by Simone on 08/02/2015.
  */
@@ -7,7 +9,7 @@ public class Problem14 implements Problem {
     private static final long MAX_STARTING = 1000000;
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         long maxSequenceLength = 0L;
         long bestStarting = 1;
         for (int i = 1; i < MAX_STARTING; i++) {
@@ -17,7 +19,7 @@ public class Problem14 implements Problem {
                 bestStarting = i;
             }
         }
-        return bestStarting;
+        return BigInteger.valueOf(bestStarting);
     }
 
     public static long nextCollatz(long n) {

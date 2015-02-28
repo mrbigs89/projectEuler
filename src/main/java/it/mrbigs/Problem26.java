@@ -13,7 +13,7 @@ public class Problem26 implements Problem {
     private static final long LIMIT = 1000;
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         long best = 0;
         long bestDivisor = 1;
         BigInteger bigInteger10 = new BigInteger(String.valueOf(10));
@@ -45,6 +45,6 @@ public class Problem26 implements Problem {
                 System.out.println(bestDivisor + " --> " + bestCandidate);
             }
         }
-        return bestDivisor;
+        return BigInteger.valueOf(bestDivisor);
     }
 }

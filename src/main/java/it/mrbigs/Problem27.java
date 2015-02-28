@@ -1,5 +1,7 @@
 package it.mrbigs;
 
+import java.math.BigInteger;
+
 import static it.mrbigs.util.Common.isPrime;
 
 /**
@@ -10,7 +12,7 @@ public class Problem27 implements Problem {
     private static final long LIMIT = 1000;
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         long bestN = 0;
         long bestA = 0;
         long bestB = 0;
@@ -24,7 +26,7 @@ public class Problem27 implements Problem {
                 }
             }
         }
-        return bestA * bestB;
+        return BigInteger.valueOf(bestA * bestB);
     }
 
     public static long numberOfPrimesGeneratedBy(long a, long b) {

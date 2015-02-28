@@ -1,5 +1,6 @@
 package it.mrbigs;
 
+import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,7 +15,7 @@ public class Problem5 implements Problem {
     private static final int LIMIT = 20;
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         int product = 1;
         Map<Integer, Integer> mcm = new HashMap<>();
         for (int i = 1; i <= LIMIT; i++) {
@@ -31,6 +32,6 @@ public class Problem5 implements Problem {
         for (Integer factor : mcm.keySet()) {
             product *= Math.pow(factor, mcm.get(factor));
         }
-        return product;
+        return BigInteger.valueOf(product);
     }
 }

@@ -3,6 +3,7 @@ package it.mrbigs;
 
 import it.mrbigs.util.Common;
 
+import java.math.BigInteger;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +15,7 @@ public class Problem21 implements Problem {
     private static final long LIMIT = 10000;
 
     @Override
-    public long solve() {
+    public BigInteger solve() {
         Set<Long> amicableNumbers = new HashSet<>();
         for (long i = 2; i < LIMIT; i++) {
             if (!amicableNumbers.contains(i)) {
@@ -29,7 +30,7 @@ public class Problem21 implements Problem {
         for (Long amicableNumber : amicableNumbers) {
             sum += amicableNumber;
         }
-        return sum;
+        return BigInteger.valueOf(sum);
     }
 
     public static long findAmicable(long number) {
