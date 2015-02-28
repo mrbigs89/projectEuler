@@ -1,7 +1,6 @@
 package it.mrbigs;
 
 import java.math.BigInteger;
-import java.util.*;
 
 /**
  * Created by Simone on 21/02/2015.
