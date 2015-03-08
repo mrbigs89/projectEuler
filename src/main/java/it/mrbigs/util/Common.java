@@ -169,14 +169,4 @@ public class Common {
         }
         return digits;
     }
-
-    public static boolean areFractionEquivalent(long numerator1, long denominator1, long numerator2, long denominator2) {
-        return (numerator1 * denominator2 == denominator1 * numerator2);
-    }
-
-    public static long gcd(long a, long b) {
-        BigInteger aB = new BigInteger(String.valueOf(a));
-        BigInteger bB = new BigInteger(String.valueOf(b));
-        return aB.gcd(bB).longValue();
-    }
 }

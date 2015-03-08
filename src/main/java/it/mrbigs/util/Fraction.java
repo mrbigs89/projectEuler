@@ -52,10 +52,8 @@ public class Fraction {
 
         Fraction fraction = (Fraction) o;
 
-        if (!denominator.equals(fraction.denominator)) return false;
-        if (!numerator.equals(fraction.numerator)) return false;
+        return denominator.equals(fraction.denominator) && numerator.equals(fraction.numerator);
 
-        return true;
     }
 
     @Override

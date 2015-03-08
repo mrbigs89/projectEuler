@@ -33,11 +33,11 @@ public class Problem33 implements Problem {
                         if (fMin.isEquivalent(f2) && !f1.isGreaterOrEqualThan(1D)) {
                             fractions.add(f2);
                         }
-                        if (fMin.isEquivalent(f2) && !f1.isGreaterOrEqualThan(1D)) {
-                            fractions.add(f2);
+                        if (fMin.isEquivalent(f3) && !f1.isGreaterOrEqualThan(1D)) {
+                            fractions.add(f3);
                         }
-                        if (fMin.isEquivalent(f2) && !f1.isGreaterOrEqualThan(1D)) {
-                            fractions.add(f2);
+                        if (fMin.isEquivalent(f4) && !f1.isGreaterOrEqualThan(1D)) {
+                            fractions.add(f4);
                         }
                     }
                 }
