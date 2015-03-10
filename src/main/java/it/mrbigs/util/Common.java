@@ -57,8 +57,13 @@ public class Common {
         return divisors;
     }
 
-    public static boolean isPalindrome(int number) {
+    public static boolean isPalindrome(long number) {
         StringBuilder stringNumber = new StringBuilder("" + number);
+        return stringNumber.substring(0, stringNumber.length() / 2).equals(stringNumber.reverse().toString().substring(0, stringNumber.length() / 2));
+    }
+
+    public static boolean isPalindrome(String number) {
+        StringBuilder stringNumber = new StringBuilder(number);
         return stringNumber.substring(0, stringNumber.length() / 2).equals(stringNumber.reverse().toString().substring(0, stringNumber.length() / 2));
     }
 
