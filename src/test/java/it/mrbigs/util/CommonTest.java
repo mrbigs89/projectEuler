@@ -84,6 +84,6 @@ public class CommonTest {
         List<Integer> list = new LinkedList<>();
         list.add(0);
         list.add(1);
-        assertEquals(list, getDigits(10));
+        assertEquals(list, getDigits(10, false));
     }
 }

@@ -21,7 +21,7 @@ public class Problem30 implements Problem {
         Set<Long> set = new HashSet<>();
         for (long n = 2; n < LIMIT; n++) {
             long sum = 0;
-            for (int digit : getDigits(n)) {
+            for (int digit : getDigits(n, false)) {
                 sum += Math.pow(digit, EXPONENT);
             }
             if (sum == n) {

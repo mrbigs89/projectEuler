@@ -28,7 +28,7 @@ public class Problem34 implements Problem {
         }
 
         for (long i = 3; i < LIMIT; i++) {
-            List<Integer> digits = getDigits(i);
+            List<Integer> digits = getDigits(i, false);
             if (digits.stream().map(factorialCache::get).reduce(BigInteger.ZERO, BigInteger::add).longValue() == i) {
                 numbers.add(i);
                 System.out.println("Added " + i);

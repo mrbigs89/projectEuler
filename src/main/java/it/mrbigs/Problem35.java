@@ -19,7 +19,7 @@ public class Problem35 implements Problem {
         for (long i = 0; i < LIMIT; i++) {
             if (!primes.contains(i) && isPrime(i)) {
                 boolean allShiftsPrime = true;
-                List<Integer> digits = getDigits(i);
+                List<Integer> digits = getDigits(i, false);
                 List<Long> shifts = new LinkedList<>();
                 for (int offset = 0; offset < digits.size(); offset++) {
                     long number = 0;

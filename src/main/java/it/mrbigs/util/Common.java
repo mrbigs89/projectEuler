@@ -166,12 +166,20 @@ public class Common {
         }
     }
 
-    public static List<Integer> getDigits(long number) {
+    public static List<Integer> getDigits(long number, boolean reverse) {
         List<Integer> digits = new LinkedList<>();
         while (number > 0) {
             digits.add((int) (number % 10));
             number = number / 10;
         }
+        if (reverse) {
+            Collections.reverse(digits);
+        }
         return digits;
+    }
+
+    public static <T> boolean hasDuplicates(List<T> list) {
+        Set<T> set = new HashSet<>(list.size());
+        return !list.stream().allMatch(set::add);
     }
 }
