@@ -178,8 +178,13 @@ public class Common {
         return digits;
     }
 
+    public static List<Integer> getDigits(int number) {
+        return getDigits(number, true);
+    }
+
     public static <T> boolean hasDuplicates(List<T> list) {
         Set<T> set = new HashSet<>(list.size());
         return !list.stream().allMatch(set::add);
     }
+
 }
