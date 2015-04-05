@@ -34,7 +34,9 @@ public class Common {
         divisors.add(1L);
         while (number > 1) {
             long divisor;
-            for (divisor = 2; number % divisor != 0; divisor++) {
+            divisor = 2;
+            while (number % divisor != 0) {
+                divisor++;
             }
             number = number / divisor;
             divisors.add(divisor);
