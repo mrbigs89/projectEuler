@@ -2,6 +2,7 @@ package it.mrbigs.util;
 
 import java.math.BigInteger;
 import java.util.*;
+import java.util.stream.IntStream;
 
 /**
  * Created by Simone on 30/01/2015.
@@ -152,6 +153,29 @@ public class Common {
         return (long) result;
     }
 
+    public static boolean isPrimeParallel(long n) {
+        if (n <= 3) {
+            return n > 1;
+        } else if (n % 2 == 0 || n % 3 == 0) {
+            return false;
+        } else {
+            double sqrtN = Math.floor(Math.sqrt(n));
+            if (IntStream
+                    .rangeClosed(1, (int) ((sqrtN - 5) / 6))
+                    .parallel()
+                    .map(num -> num * 6 + 5)
+                    .anyMatch(i -> (n % i == 0 || n % (i + 2) == 0))) {
+                return false;
+            }
+//            for (int i = 5; i <= sqrtN; i += 6) {
+//                if (n % i == 0 || n % (i + 2) == 0) {
+//                    return false;
+//                }
+//            }
+            return true;
+        }
+    }
+
     public static boolean isPrime(long n) {
         if (n <= 3) {
             return n > 1;
@@ -180,13 +204,18 @@ public class Common {
         return digits;
     }
 
-    public static List<Integer> getDigits(int number) {
+    public static List<Integer> getDigits(long number) {
         return getDigits(number, true);
     }
 
     public static <T> boolean hasDuplicates(List<T> list) {
         Set<T> set = new HashSet<>(list.size());
         return !list.stream().allMatch(set::add);
+    }
+
+    public static boolean isPandigital(long number) {
+        final List<Integer> digits = getDigits(number);
+        return (IntStream.rangeClosed(1, digits.size()).allMatch(digits::contains));
     }
 
 }

@@ -86,4 +86,14 @@ public class CommonTest {
         list.add(1);
         assertEquals(list, getDigits(10, false));
     }
+
+    @Test
+    public void testIsPrime() throws Exception {
+        long start = System.nanoTime();
+        assertTrue(isPrime(20422213583L));
+        System.out.println(System.nanoTime() - start);
+        start = System.nanoTime();
+        assertTrue(isPrimeParallel(20422213583L));
+        System.out.println(System.nanoTime() - start);
+    }
 }
